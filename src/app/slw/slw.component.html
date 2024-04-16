@@ -1,0 +1,53 @@
+<div class="container">
+  <ng-container *ngIf="slwList !== undefined">
+    <div *ngFor="let data of slwList">
+      <div class="mt-2 ipl-date">
+        <h4
+          style="
+            font-size: 14px;
+            text-align: center;
+            position: relative;
+            top: 2px;
+          "
+        >
+          {{ data.key | custom }}
+        </h4>
+      </div>
+      <div class="ecs-protugal">
+        <p>{{ data.value.key }} <span>></span></p>
+
+        <div class="row" *ngFor="let val of data.value.value">
+          <div class="col-md-6 mt-2">
+            <div class="card" style="box-shadow: 3px 2px 12px;height:144px">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div>
+                    <img src="{{ val.t1_flag }}" />&nbsp;&nbsp;<span>{{
+                      val.t1_key
+                    }}</span>
+                  </div>
+
+                  <div class="mt-2">
+                    <img src="{{ val.t2_flag }}" />&nbsp;&nbsp;<span>{{
+                      val.t2_key
+                    }}</span>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div style="position: relative; top: 53px; left: 71%">
+                    <h3 style="font-size: 16px; color: #afa3a3">Time</h3>
+                    <p  style="line-height: 6px;
+                    font-size: 19px;
+                    position: relative;
+                    right: 7px;">{{ val.time | time }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
